@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    color: #333;
+    min-height: 100vh;
+    background: #E7E7DC;
+    /* padding: 5px; */
+}
+
+/*导航栏样式*/
+.top_nav {
+    height: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    position: sticky;
+    z-index: 1000;
+    background: #E7E7DC;
+}
+
+.logo-container {
+    display: flex;
+    align-items: left;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.logo-container img {
+    height: 75px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-container img:hover {
+    transform: scale(1.1);
+}
+
+.nav-divider {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.divider-line {
+    width: 100%;
+    height: 2px;
+    /* background: linear-gradient(90deg, rgba(7, 7, 7, 0), #070707de, rgba(7, 7, 7, 0)); */
+    background: #070707af;
+    position: relative;
+    overflow: hidden;
+}
+
+.top_nav_right {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.top_nav_right li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.top_nav_right li:not(:last-child)::after {
+    content: "/";
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0 15px;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+    font-weight: 650;
+    font-size: 22px;
+    padding: 10px 8px;
+    position: relative;
+    transition: all 0.4s ease;
+    letter-spacing: 0.5px;
+    display: block;
+    border-radius: 4px;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #D4C5A9,#D4C5A9);
+    ;
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 2px;
+}
+
+
+.link:hover {
+    color: black;
+    background: #D9DBCE;
+    transform: translateY(-2px);
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+/* 导航栏结束 */
+
+/* login-container */
+.login-container{
+    width: 70%;
+    max-width: 900px;
+    padding: 40px;
+    margin: 50px auto;
+    position: relative;
+    display: flex;
+    background: rgba(255,255,255,0.7);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-top: 130px;
+}
+
+.left-login-img{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.left-login-img img{
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.left-login-img:hover{
+    transform: scale(1.02);
+}
+
+.loginbox{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+}
+
+.loginbox span{
+    margin-bottom: 25px;
+    display: inline-block;
+    position: relative;
+}
+
+.loginbox span:after{
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #D4C5A9;
+}
+
+.loginbox ul{margin-top: 10px;}
+
+.loginbox ul li{
+    height: auto;
+    list-style: none;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.loginbox ul li input[type="text"],
+.loginbox ul li input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.loginbox ul li input[type="text"]:focus,
+.loginbox ul li input[type="password"]:focus{
+    border-color: #D4C5A9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(212,197,169,0.5);
+}
+
+.loginbox ul li input.loginbtn{
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #D4C5A9;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.loginbox ul li input.loginbtn:hover{
+    background-color: #C2B394;
+    transform:translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 30px;
+    margin-top: 200px;
+}
+
+.divider-line3{
+    flex: 1;
+    height: 2px;
+    background: #070707af;
+    position: relative;
+    margin: 0 20px 0 40px;
+}
+
+.footer p{
+    margin: 15px auto;
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+}
+
+.footer p a{
+    color: #333333;
+    text-decoration: none;
+}

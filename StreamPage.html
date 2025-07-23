@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Stream Page</title>
+    <link rel="stylesheet" href="css/StreamPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="stream-container">
+        <div class="cover">
+            <div class="cover-wrapper">
+                <img src="images/cover.png" width="225px" height="225px">
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+        <!-- 视频弹窗 -->
+        <div class="video-modal" id="videoModal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <iframe width="560" height="315" src="Shake It Off.mp4" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="cover-font">
+            <p class="artist-name">Taylor Swift</p>
+            <p class="album-name">1989</p>
+            <p class="option-name">Choose Your Music Options</p>
+        </div>
+    </div>
+
+    <div class="site-container">
+        <ul class="sites">
+            <li><img src="images/logo/logo_taylorswift.jpg">
+                <a class="stream-button" href="https://taylorswift.com" target="_blank">Go</a>
+            </li>
+            <li><img src="images/logo/logo_applemusic.jpg">
+                <a class="stream-button" href="https://music.apple.com/cn/album/1989-deluxe-edition/1445881848"
+                    target="_blank">Play</a>
+            </li>
+            <li><img src="images/logo/logo_spotify.jpg">
+                <a class="stream-button" href="https://open.spotify.com/album/5fy0X0JmZRZnVa2UEicIOl"
+                    target="_blank">Play</a>
+            </li>
+            <li><img src="images/logo/logo_neteasemusic.jpg">
+                <a class="stream-button" href="https://music.163.com/#/album?id=3029801" target="_blank">Play</a>
+            </li>
+            <li><img src="images/logo/logo_qqmusic(1).png">
+                <a class="stream-button" href="https://y.qq.com/n/ryqq/albumDetail/002Kz5Jo1uzHjz"
+                    target="_blank">Play</a>
+            </li>
+            <li><img src="images/logo/logo_amazonmusic.jpg">
+                <a class="stream-button" href="https://music.amazon.com/albums/B072MPCK25" target="_blank">Play</a>
+            <li><img src="images/logo/logo_youtubemusic.jpg">
+                <a class="stream-button"
+                    href="https://music.youtube.com/playlist?list=OLAK5uy_n8mGmmk-aCPt9QQ9dOLQAHj0fDa7bBuLA"
+                    target="_blank">Play</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <script>
+        const coverWrapper = document.querySelector('.cover-wrapper');
+        const modal = document.getElementById('videoModal');
+        const closeButton = document.querySelector('.close-button');
+
+        coverWrapper.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+            // 停止视频播放
+            const iframe = modal.querySelector('iframe');
+            const iframeSrc = iframe.src;
+            iframe.src = iframeSrc;
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                // 停止视频播放
+                const iframe = modal.querySelector('iframe');
+                const iframeSrc = iframe.src;
+                iframe.src = iframeSrc;
+            }
+        });
+    </script>
+</body>
+
+</html>

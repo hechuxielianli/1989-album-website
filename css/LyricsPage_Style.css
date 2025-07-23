@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    color: #333;
+    min-height: 100vh;
+    background: #E7E7DC;
+    /* padding-top: 95px; */
+    display: felx;
+    padding-left: 20%;
+}
+
+.main-container{
+    display: flex;
+    flex: 1;
+    margin-top: 25px;
+}
+
+/*导航栏样式*/
+.top_nav {
+    height: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #E7E7DC;
+}
+
+.logo-container {
+    display: flex;
+    align-items: left;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.logo-container img {
+    height: 75px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-container img:hover {
+    transform: scale(1.1);
+}
+
+.nav-divider {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.divider-line {
+    width: 100%;
+    height: 2px;
+    background: #070707af;
+    position: relative;
+    overflow: hidden;
+}
+
+.top_nav_right {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.top_nav_right li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.top_nav_right li:not(:last-child)::after {
+    content: "/";
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0 15px;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+    font-weight: 650;
+    font-size: 22px;
+    padding: 10px 8px;
+    position: relative;
+    transition: all 0.4s ease;
+    letter-spacing: 0.5px;
+    display: block;
+    border-radius: 4px;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #D4C5A9,#D4C5A9);
+    ;
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 2px;
+}
+
+
+.link:hover {
+    color: black;
+    background: #D9DBCE;
+    transform: translateY(-2px);
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+/* 导航栏结束 */
+
+/* 左侧导航栏 */
+.left_nav {
+    width: 20%;
+    height: 100%;
+    overflow-y: auto;
+    min-height: calc(100vh - 95px - 30px); /* 减去顶部导航栏高度 */
+    background: #E7E7DC;
+    position: fixed;
+    left: 0;
+    top: 95px;
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    z-index: 999;
+}
+
+.song-list {
+    list-style: none;
+    padding: 0;
+}
+
+.song-item {
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.song-number {
+    font-size: 14px;
+    color: #8B7355;
+    font-weight: 600;
+    min-width: 25px;
+}
+
+.song-title {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.song-item:hover {
+    background: #D4C5A9;
+    transform: translateX(5px);
+}
+
+.song-item.active {
+    background: #D4C5A9;
+    position: relative;
+}
+
+.song-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: #8B7355;
+}
+
+.content-wrapper{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 95px - 30px);
+}
+/* 右侧歌词内容区域 */
+.lyrics-content {
+    margin-top: 95px;
+    /* height: calc(100vh - 95px - 30px); */
+    background: #E7E7DC;
+    position: relative;
+    overflow-y: auto;
+}
+/* 优化滚动条样式 */
+.left_nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.left_nav::-webkit-scrollbar-track {
+    background: #E7E7DC;
+}
+
+.left_nav::-webkit-scrollbar-thumb {
+    background: #D4C5A9;
+    border-radius: 3px;
+}
+
+.left_nav::-webkit-scrollbar-thumb:hover {
+    background: #8B7355;
+}
+
+.lyrics-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(139, 115, 85, 0.2);
+}
+
+.lyrics-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.lyrics-info {
+    font-size: 16px;
+    color: #8B7355;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.lyrics-text {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 2;
+    white-space: pre-line;
+    font-size: 18px;
+    color: #333;
+}
+
+.lyrics-verse {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(212, 197, 169, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.lyrics-verse:hover {
+    background: rgba(212, 197, 169, 0.4);
+    transform: translateY(-2px);
+}
+
+.verse-title {
+    font-weight: 600;
+    color: #8B7355;
+    margin-bottom: 10px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 30px;
+    display: fixed;
+}
+
+.divider-line3{
+    flex: 1;
+    height: 2px;
+    background: #070707af;
+    position: relative;
+    margin: 0 20px;
+}
+
+.footer p{
+    margin: 10px auto;
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+}
+
+.footer p a{
+    color: #333333;
+    text-decoration: none;
+}
