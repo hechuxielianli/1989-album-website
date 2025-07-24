@@ -27,7 +27,8 @@ A responsive web experience dedicated to Taylor Swift's iconic album "1989". Thi
 The website is fully responsive and optimized for:
 - Desktop computers
 - Tablets
-- Mobile phones
+
+*Note:The mobile device layout is not responsive. It is not recommended to open it on mobile devices.*
 
 ## 🎨 Design Features
 
