@@ -132,7 +132,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👩‍💻 Author
 
-Created with 💙 by [Huang Zhanpeng]
+Created with 💙 by `Huang Zhanpeng`
 
 ## 🙏 Acknowledgements
 
